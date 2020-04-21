@@ -8,12 +8,11 @@ import java.util.*
 fun main(args:Array<String>){
     var name="zz"
     val h="ss"  //val 用来定义常量，常量不能重新赋值
-    //h="11"
     println("hello kotlin"+"::"+name+ add(1,9) +"::"+ sub(9,6))
     println(eq("and","AnD",true))
     println(eq("and","AnD",false))
     println(heat(null))
-    switch(9)
+    switch(9,"ssss")
     p(null)
     list(null)
     map(null)
@@ -38,7 +37,7 @@ fun heat(arg:String?):String{//接收一个参数为非空的值，加上问号�
     return "热${arg}"
 }
 //when与java中的switch语句一样
-fun switch(arg:Int){
+fun switch(arg:Int,name:String){
     when(arg){
         10 -> println("满分")
         9  -> println("高分")

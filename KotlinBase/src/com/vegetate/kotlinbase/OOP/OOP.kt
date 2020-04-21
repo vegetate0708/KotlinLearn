@@ -16,6 +16,14 @@ open class father{
     }
 }
 
+//class 类修饰符
+class vg{
+    fun add(i:Int,j:Int):Int{
+        return i+j
+    }
+}
+
+
 class sun: father(){//被继承的类必须加上open 关键字
    override fun action(){//重写方法加上override
        println("年轻人爱逛街")
