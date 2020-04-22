@@ -5,11 +5,20 @@ package com.vegetate.kotlinbase.base
  */
 data class User(val name : String, val pwd : String)
 
-fun main() {
+/**
+ * object修饰关键的类为单例类
+ */
+object  Singleton{
+    fun singletonTest(){
+        println("单例类")
+    }
+}
+fun main(args:Array<String>) {
     val mUser = User("kotlin","123456")
     val mUser1=User("kotlin","123456")
     println(mUser)
     println("mUser==mUser1:"+ (mUser==mUser1))
     val mNewUser = mUser.copy(name = "new Kotlin")
     println(mNewUser)
+    Singleton.singletonTest()
 }
