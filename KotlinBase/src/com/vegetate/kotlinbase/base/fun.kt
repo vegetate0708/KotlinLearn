@@ -11,7 +11,6 @@ fun main(args: Array<String>) {
     var result=i(9,9)
     println(result)
 
-
     var j:(Int,Int)->Int={x,y->x+y}
     var result2=j(9,3)
     println(result2)
@@ -22,7 +21,7 @@ fun main(args: Array<String>) {
     var 周长2= 获取圆周的周长2(直径=4f)//使用这种函数的时候要加上参数名
     println(周长2)
 
-
+    val initorder=InitOrderDemo("z")
     //键盘输入交互
     println("请输入第一个数字：")
     var num1str= readLine()
@@ -39,11 +38,24 @@ fun main(args: Array<String>) {
 fun add1(x:Int,y:Int):Int=x+y
 
 //下面是函数的默认参数和具名参数
-val pi=3.14159f
+
 fun 获取圆周的周长(PI:Float,半径:Float):Float{
     return 2*PI*半径
 }
-
+val pi=3.14159f
 fun 获取圆周的周长2(PI:Float= pi, 直径:Float):Float{
     return PI*直径
+}
+
+class Person constructor(firstName: String){
+}
+class InitOrderDemo(name: String) {
+    val firstProperty = "First property: $name".also(::println)
+    init {
+        println("First initializer block that prints ${name}")
+    }
+    val secondProperty = "Second property: ${name.length}".also(::println)
+    init {
+        println("Second initializer block that prints ${name.length}")
+    }
 }

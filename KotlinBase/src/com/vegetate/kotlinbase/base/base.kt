@@ -14,9 +14,10 @@ fun main(args:Array<String>){
 //    println(heat(null))
 //    switch(9,2)
 //    range(null)
-    listandset(null)
+//    listandset(null)
 //    map(null)
-//    println(fact(5))
+   // println(fact(20000))
+    println(alladd(20000,0))
 }
 //Unit 无返回值，也可以不写
 fun add(a:Int,b:Int):Int{
@@ -113,18 +114,13 @@ fun map(arg: String?){
     println(maps["60分"])
 }
 
-fun fact(num: Int):Int{
-    if (num==1){
-        return 1
-    }else{
-        return num* fact(num-1)
-    }
-}
+fun fact(num: Int):Int=if(num==1) 1 else num+fact(num-1)
+
 //tailrec 尾递归优化，返回值应该为函数本身
 tailrec fun alladd(num: Int,result:Int):Int{
     println("第${num}次,结果为${result}")
     if (num==0){
-        return 1
+        return result
     }else{
         return alladd(num-1,result+num)
     }
