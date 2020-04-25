@@ -1,12 +1,10 @@
 package com.vegetate.kotlinbase.base
 
-var print1=fun(name:String):Unit{
-    println(name)
-}
+var lamada1={ name:String -> println(name) }
 fun main(args: Array<String>) {
     val names= listOf<String>("tom","jake","lucy")
     //第一种方法
-    names.forEach(print1)
+    names.forEach(lamada1)
     //第二种
     names.forEach{
         a -> println(a)
@@ -15,6 +13,9 @@ fun main(args: Array<String>) {
     names.forEach{
         println(it)
     }
+
+   println( names.maxBy { it.length })
+
 
     println(女生团.filter {
         (it.age>20)and (it.height>160)
