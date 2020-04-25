@@ -125,3 +125,17 @@ tailrec fun alladd(num: Int,result:Int):Int{
         return alladd(num-1,result+num)
     }
 }
+
+fun getText(text:String){
+    val n=""
+    if (n!=null){
+        n.length
+    }
+    //想当与以上操作
+    n?.length
+    var a=1
+    var b=1
+    //var c=if (a!=null){a}else {b}
+    val c=a?:b
+}
+fun getTextLength(text:String?)=text?.length?:0

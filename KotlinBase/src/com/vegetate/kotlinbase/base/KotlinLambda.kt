@@ -1,25 +1,43 @@
 package com.vegetate.kotlinbase.base
 
-var lamada1={ name:String -> println(name) }
+import java.util.*
+
+
 fun main(args: Array<String>) {
-    val names= listOf<String>("tom","jake","lucy")
+    val names= listOf<String>("tom","jake","lucye")
+    val lambda1={ name:String -> print(name+":") }
     //第一种方法
-    names.forEach(lamada1)
-    //第二种
-    names.forEach{
-        a -> println(a)
-    }
-    //第二种的简洁形式
-    names.forEach{
-        println(it)
-    }
+    names.forEach(lambda1)
+    //首先，不需要专门定义一个lambda变量，可以直接将lambda表达式传入函数
+    names.forEach({name:String -> print(name+":")})
+    //如果是最后一个参数可以放外面
+    names.forEach(){name:String -> print(name+":")}
+    //如果是唯一参数时可以省略括号
+    names.forEach{name:String -> print(name+":")}
+    //kotlin的类型推导机制，可以在大多数情况下不用声明类型
+    names.forEach{name -> print(name+":")}
+    //当参数列表只有一个参数时，可以用it关键字来代替
+    names.forEach{ println(it)}
 
-   println( names.maxBy { it.length })
+    val names2=names.map{it.toUpperCase()}
+    names2.forEach{ println(it)}
 
+    val names3=names.filter { it.length<=4 }.map{it.toUpperCase()}
+    names3.forEach{ println(it)}
 
+    println( names2.maxBy {it.length})
     println(女生团.filter {
         (it.age>20)and (it.height>160)
     })
+    Thread(object:Runnable{
+        override fun run() {
+            print(1)
+        }
+    }).start()
+    //简写1
+    Thread(Runnable { print(1) }).start()
+    //简写2
+    Thread{ print(1)}.start()
 }
 data class Girl(var name: String,var age:Int,var height:Int,var address:String)
 var 女生团= listOf<Girl>(
