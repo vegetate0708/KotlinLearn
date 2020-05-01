@@ -38,8 +38,34 @@ fun main(args: Array<String>) {
     Thread(Runnable { print(1) }).start()
     //简写2
     Thread{ print(1)}.start()
+
+    doStudy()
 }
 data class Girl(var name: String,var age:Int,var height:Int,var address:String)
+
+class  Study {
+    fun doHomeWork(){
+        print("doWork")
+    }
+    fun readBooks(){
+        print("readBook")
+    }
+}
+
+var study:Study?=null
+fun doStudy(){
+//    if (study!=null){
+//        study.doHomeWork()
+//        study.readBooks()
+//    }
+    //与上面的代码一样
+    study?.let{
+        study ->
+        study.doHomeWork()
+        study.readBooks()
+    }
+}
+
 var 女生团= listOf<Girl>(
         Girl("小芳1",18,160,"湖北"),
         Girl("小芳2",22,163,"河南"),

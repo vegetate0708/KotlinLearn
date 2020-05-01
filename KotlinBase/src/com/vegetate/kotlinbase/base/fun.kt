@@ -6,7 +6,8 @@ package com.vegetate.kotlinbase.base
  */
 fun main(args: Array<String>) {
     println(add1(7,8))
-
+    println(add2(7))
+    println(add3(y=7))
     var i={x:Int,y:Int -> x+y}
     var result=i(9,9)
     println(result)
@@ -36,7 +37,8 @@ fun main(args: Array<String>) {
 }
 
 fun add1(x:Int,y:Int):Int=x+y
-
+fun add2(x:Int,y:Int=1):Int=x+y
+fun add3(x:Int=1,y:Int):Int=x+y
 //下面是函数的默认参数和具名参数
 
 fun 获取圆周的周长(PI:Float,半径:Float):Float{

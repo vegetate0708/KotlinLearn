@@ -31,7 +31,7 @@ fun eq(a:String,b:String,c:Boolean):Boolean{
 //null值处理
 fun heat(arg:String?):String{//接收一个参数为非空的值，加上问号表示参数可以为空
     //return "热"+arg
-    return "热${arg}"
+    return "热$arg"
 }
 
 //if语句缩写形式，其本来形式与java相同
@@ -118,7 +118,7 @@ fun fact(num: Int):Int=if(num==1) 1 else num+fact(num-1)
 
 //tailrec 尾递归优化，返回值应该为函数本身
 tailrec fun alladd(num: Int,result:Int):Int{
-    println("第${num}次,结果为${result}")
+    println("第 $num 次,结果为 $result")
     if (num==0){
         return result
     }else{
